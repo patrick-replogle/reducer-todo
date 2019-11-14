@@ -6,15 +6,7 @@ const TodoList = props => {
     <div className="todosContainer">
       {props.todos.length < 1 && <h2>Add Some Todos!</h2>}
       {props.todos.map(todo => {
-        return (
-          <Todo
-            key={todo.id}
-            todo={todo}
-            // clearTodos={todo.clearTodos}
-            // toggleCompleted={props.toggleCompleted}
-            dispatch={props.dispatch}
-          />
-        );
+        return <Todo key={todo.id} todo={todo} dispatch={props.dispatch} />;
       })}
       <button onClick={() => props.dispatch({ type: "CLEAR_TODO" })}>
         Delete Todos
