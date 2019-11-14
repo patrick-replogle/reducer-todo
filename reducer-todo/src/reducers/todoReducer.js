@@ -2,12 +2,14 @@ export const initialTodos = [
   {
     item: "Learn reducer patterns",
     completed: false,
-    id: Date.now()
+    id: 1,
+    editing: false
   },
   {
     item: "Beat Zelda",
     completed: false,
-    id: Date.now()
+    id: 2,
+    editing: false
   }
 ];
 
