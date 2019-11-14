@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <h1>TodoList 2.0</h1>
         <Form />
-        <TodoList todos={state} dispatch={dispatch} />
+        <TodoList />
       </div>
     </TodoContext.Provider>
   );

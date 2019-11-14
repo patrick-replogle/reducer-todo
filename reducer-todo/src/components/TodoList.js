@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 import { TodoContext } from "../contexts/TodoContext";
 
-const TodoList = props => {
+const TodoList = () => {
   const { state } = useContext(TodoContext);
   return (
     <div className="todosContainer">

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { TodoContext } from "../contexts/TodoContext";
 
-const Form = props => {
+const Form = () => {
   const { dispatch } = useContext(TodoContext);
   const [todo, setTodo] = useState({ item: "" });
 
