@@ -41,7 +41,11 @@ span {
   align-items: center;
   background: salmon;
   margin: 5px 5px;
-  width: 100%;
+  width: 80%;
+}
+
+.todoContainer.todoContainerCompleted {
+  background: darksalmon;
 }
 
 .todo {
@@ -53,9 +57,14 @@ span {
   cursor: pointer;
 }
 
+.todoContainer .date {
+  margin-left: 10%;
+}
+
 .todo.completed {
   text-decoration: line-through;
   color: white;
+  background: darksalmon;
 }
 
 .todosContainer {
@@ -64,6 +73,11 @@ span {
   justify-content: center;
   align-items: center;
   width: 80%;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
 }
 
 .form {
@@ -75,7 +89,7 @@ span {
 
 button {
   padding: 10px 20px;
-  margin: 0 10px;
+  margin-left: 10px;
   border-radius: 5px;
   color: white;
   background: rgb(243, 87, 160);
@@ -86,9 +100,16 @@ button:hover {
   background: white;
   color: darkblue;
 }
+button:focus {
+  outline: 0;
+}
 
 input {
   padding: 10px 0;
   width: 300px;
   border-radius: 6px;
+}
+
+input:focus {
+  outline: 0;
 }

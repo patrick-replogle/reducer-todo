@@ -16,7 +16,7 @@ const Form = props => {
   };
 
   return (
-    <>
+    <div className="formContainer">
       <form onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
@@ -26,7 +26,10 @@ const Form = props => {
         />
         <button>Add Todo</button>
       </form>
-    </>
+      <button onClick={() => props.dispatch({ type: "CLEAR_TODO" })}>
+        Delete Todos
+      </button>
+    </div>
   );
 };
 

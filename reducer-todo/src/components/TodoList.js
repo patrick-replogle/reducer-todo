@@ -8,9 +8,6 @@ const TodoList = props => {
       {props.todos.map(todo => {
         return <Todo key={todo.id} todo={todo} dispatch={props.dispatch} />;
       })}
-      <button onClick={() => props.dispatch({ type: "CLEAR_TODO" })}>
-        Delete Todos
-      </button>
     </div>
   );
 };
