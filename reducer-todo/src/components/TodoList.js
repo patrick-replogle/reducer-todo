@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Todo from "./Todo";
 
+import { TodoContext } from "../contexts/TodoContext";
+
 const TodoList = props => {
+  const { state } = useContext(TodoContext);
   return (
     <div className="todosContainer">
-      {props.todos.length < 1 && <h2>Add Some Todos!</h2>}
-      {props.todos.map(todo => {
-        return <Todo key={todo.id} todo={todo} dispatch={props.dispatch} />;
+      {state.length < 1 && <h2>Add Some Todos!</h2>}
+      {state.map(todo => {
+        return <Todo key={todo.id} todo={todo} />;
       })}
     </div>
   );

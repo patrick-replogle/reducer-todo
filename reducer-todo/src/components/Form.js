@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TodoContext } from "../contexts/TodoContext";
 
 const Form = props => {
+  const { dispatch } = useContext(TodoContext);
   const [todo, setTodo] = useState({ item: "" });
 
   const handleChange = e => {
@@ -10,7 +12,7 @@ const Form = props => {
   const handleSubmit = e => {
     e.preventDefault();
     if (todo.item !== "") {
-      props.dispatch({ type: "ADD_TODO", payload: todo.item });
+      dispatch({ type: "ADD_TODO", payload: todo.item });
       setTodo({ item: "" });
     }
   };
@@ -26,7 +28,7 @@ const Form = props => {
         />
         <button>Add Todo</button>
       </form>
-      <button onClick={() => props.dispatch({ type: "CLEAR_TODO" })}>
+      <button onClick={() => dispatch({ type: "CLEAR_TODO" })}>
         Delete Todos
       </button>
     </div>

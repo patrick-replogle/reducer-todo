@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import moment from "moment";
 
+import { TodoContext } from "../contexts/TodoContext";
+
 const Todo = props => {
+  const { dispatch } = useContext(TodoContext);
   const [time, setTime] = useState("");
+
   const handleClick = () => {
     const completedDate = moment().format("MMM Do YY");
     setTime(completedDate);
-    props.dispatch({ type: "TOGGLE_COMPLETED", payload: props.todo.id });
+    dispatch({ type: "TOGGLE_COMPLETED", payload: props.todo.id });
   };
 
   return (
